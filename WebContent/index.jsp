@@ -98,9 +98,7 @@ else{
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
 
-<!-- <div style="width:100%;height:50px;margin-top:50px; color:#222222；position:absolute">
-<div style="font-size:20px;width:950px; height:50px; margin:0 auto;  text-align:center">欢迎来到 "<b>小弟的私人飞机</b>" 在线订餐网站<br><br>这里提供最新鲜，最美味，最便捷，最安全的食物。让你重温旧梦找回家的感觉！Thx</div>
-</div> -->
+
 
 	<div class="tuijian_area">
 		<div class="tuijian">精品选购</div>

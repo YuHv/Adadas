@@ -148,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- FOOTER -->
       <center>
 		<footer>
-        <p class="center">&copy; Junk Food 网上订餐系统，愿您度过好时光！</p>
+        <p class="center">&copy; 鞋作社（Adadas），愿您度过好时光！</p>
       </footer>
       </center>
     </div><!-- /.container -->

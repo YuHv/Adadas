@@ -48,7 +48,7 @@ public class MenuDAO extends HibernateDaoSupport {
 		
 	}
 	public List mysearch(Object dishes){
-		String queryString ="from Menu  where dishes like  ? and price like ?";
+		String queryString ="from Menu  where dishes like  ?";
 		
 		return getHibernateTemplate().find(queryString,"%"+dishes+"%");
 		
