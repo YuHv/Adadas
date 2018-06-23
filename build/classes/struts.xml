@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="struts-default" >
+	<!-- 用户的Action -->
+		<action name="ClientAction" class="ClientAction">
+		<!-- 登录成功 -->
+				<result name="ok" >/page/successlogin.jsp</result>
+		<!-- 登录失败 -->
+				<result name="fail">/page/faillogin.jsp</result>
+		<!-- 注册成功 -->
+				<result name="successRegister" >/page/successRegister.jsp</result>
+		<!-- 注册失败 -->
+				<result name="fail2" >/page/failRegister.jsp</result>
+				<result name="failRegister1">/page/failRegister.jsp</result>
+				
+				
+		<!-- 获取个人信息 -->		
+				<result name="input" type="redirect">/ClientAction!myData</result>
+		<!-- 修改个人信息 -->		
+				<result name="merge">/page/personal.jsp</result>
+	<!-- 跳转到userList.jsp -->
+				<result name="show">userList.jsp</result>
+				<result name="clientShow" type="redirect">admin/ClientAction!clientShow</result>
+		</action>
+		<!-- 鞋 -->
+		<action name="MenuAction" class="MenuAction">
+			<!-- 上传图片限制 -->
+		  <interceptor-ref name="fileUpload">
+                <param name="allowedTypes">
+                    image/bmp,image/png,image/gif,image/jpeg,image/jpg
+                </param>
+                <param name="maximumSize">102400</param>
+            </interceptor-ref>
+            
+            <!-- 默认的拦截器，必须要写 -->
+            <interceptor-ref name="defaultStack" />
+            
+			<result name="ok">index.jsp</result>
+			<!-- 鞋的详情 -->
+			<result name="detail">page/detail.jsp</result>
+			<!-- 鞋的搜素 -->
+			<result name="search">page/search.jsp</result>
+			<!-- 鞋列表 -->
+			<result name="showList">menuList.jsp</result>
+			
+			<result name="showmenu" type="redirect">admin/MenuAction!menuShow</result>
+			
+			<result name="input" type="redirect">index.jsp</result>
+			<!-- 鞋修改-->
+			<result name="mer" >menuMer.jsp</result>			
+		</action>
+		<!-- 订单 -->
+		<action name="OrdersAction" class="OrdersAction">
+			<result name="input">page/order.jsp</result>
+			<result name="jump">jump/jumpOrder.jsp</result>
+			<result name="del" type="redirect" >admin/OrdersAction!ordersShow</result>
+			<result name="show" >ordersList.jsp</result>
+			<result name="process" >ordersProcess.jsp</result>
+			<result name="jump2" type="redirect" >admin/OrdersAction!processShow</result>
+			<result name="date" >ordersDate.jsp</result>
+		</action>
+		<!-- 后台用户管理 -->
+		<action name="ReviewAction" class="ReviewAction">
+			<result name="input">/page/jump.jsp</result>
+			<result name="ok">/page/jump.jsp</result>
+			<result name="listuserinfo">page/showuserlist.jsp</result>
+			<result name="init">page/MyJsp.jsp</result>
+		</action>
+		<!-- 管理员 -->
+		<action name="AdministratorAction" class="AdministratorAction">
+			<result name="ok">adminList.jsp</result>
+			<result name="show"  type="redirect">admin/AdministratorAction!myShow</result>
+			<result name="index">index.jsp</result>
+			<result name="fail">login.jsp</result>
+			<result name="mer">adminMer.jsp</result>
+		</action>
+		<!-- 公告 -->
+		<action name="AnnouncementAction" class="AnnouncementAction">
+			<result name="show">announcementList.jsp</result>
+			<result name="init">page/new.jsp</result>
+			<result name="yubei" type="redirect">admin/AnnouncementAction!myShow</result>
+		</action>
+		
+		<action name="BasketAction" class="BasketAction">
+			<result name="ok">/page/addsuccess.jsp</result>
+		<!-- 购物车 -->	
+			<result name="show">page/basket.jsp</result>
+		<!-- 删除购物车之后的跳转 -->	
+			<result name="jump">jump/jumpBasket.jsp</result>
+		</action>
+        
+	</package>
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.ui.templateSuffix" value="ftl" />
+	<!-- 指定国际化资源文件的baseName为messageResource -->
+     <constant name="struts.custom.i18n.resources" value="messageResource"/>
+     
+     <constant name="struts.devMode" value="true" /> 
+    
+    <!-- 设置该应用使用的解码集 -->
+     <constant name="struts.i18n.encoding" value="utf-8"/>
+ 
+     <!-- 上传的全部图片的最大限制-->
+     <constant name="struts.multipart.maxSize" value="1024102400"/>
+
+</struts>    
